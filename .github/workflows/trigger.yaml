@@ -24,7 +24,7 @@ jobs:
     - name: Create Archive
       id: create-archive
       run: |
-        zip -r grupoetra grupoetra/*.xlsx
+        zip -r grupoetra excel-use-cases/*.xlsx
 
     - name: Create Release
       id: create-release
