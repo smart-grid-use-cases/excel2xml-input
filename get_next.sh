@@ -1,3 +1,6 @@
+#!/bin/bash
+set -o nounset
+
 owner_url=$1
 repo_name=$2
 latest_url=$(wget https://github.com/${owner_url}/${repo_name}/releases/latest --max-redirect=0 2>&1 | grep Location)
