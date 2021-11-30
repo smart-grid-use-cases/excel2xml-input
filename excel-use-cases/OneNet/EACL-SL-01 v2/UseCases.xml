@@ -1,0 +1,1900 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Modsarus XML Interface based on IEC 62559-3, version 1-->
+<!--Based on IEC 62559-2 edition 1
+Generated from UML Use Case Repository with Modsarus® (EDF R&D Tool)-->
+<UC:UseCaseRepository xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.SYC.org/IEC62559/part3/UC/V01/Build08082016 C:\EAAddIns\Modsarus\Transformation\IEC62559-3_UC.xsd" xmlns:UC="http://www.SYC.org/IEC62559/part3/UC/V01/Build08082016">
+  <ActorLibrary>
+    <Actor>
+      <description>According to the Article 2.4 of the Electricity Directive 2009/72/EC (Directive): &amp;quot;a natural or legal person responsible for operating, ensuring the maintenance of and, if necessary, developing the transmission system in a given area and, where applicable, its interconnections with other systems, and for ensuring the long-term ability of the system to meet reasonable demands for the transmission of electricity&amp;quot;. Moreover, the TSO is responsible for connection of all grid users at the transmission level and connection of the DSOs within the TSO control area.&lt;br/&gt;Source : EU Commission Task Force for Smart Grids, EG3&lt;br/&gt;</description>
+      <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+      <name>Transmission System Operator (TSO)</name>
+      <type>Business</type>
+    </Actor>
+    <Actor>
+      <description>A natural or legal person who is responsible for operating, ensuring the maintenance of and, if necessary, developing the &lt;a href="https://www.emissions-euets.com/internal-electricity-market-glossary/1018-distribution"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;distribution&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; system in a given area and, where applicable, its interconnections with other systems, and for ensuring the long-term ability of the system to meet reasonable demands for the distribution of electricity.&lt;br/&gt;&lt;br/&gt;Defined in the European Union Internal Electricity Market is legally defined in Article 2(29) of the Directive (EU) 2019/944 of the European Parliament and of the Council of 5 June 2019 on common rules for the internal market in electricity (recast), &lt;br/&gt;</description>
+      <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+      <name>Distribution System Operator (DSO)</name>
+      <type>Business</type>
+    </Actor>
+    <Actor>
+      <description>Defined as any legal entity that offers flexibility services in the market, based on acquired (aggregated) capabilities, usually from third parties.</description>
+      <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+      <name>Flexibilty Service Provider (FSP)</name>
+      <type>Business</type>
+    </Actor>
+    <Actor>
+      <description>A market operator is a party that provides a service whereby the offers to sell electricity are matched with bids to buy electricity.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Additional Information&lt;/b&gt;:&lt;br/&gt;This usually is an energy/power exchange or platform.&lt;br/&gt;The definition is based on &lt;a href="$inet://https://eur-lex.europa.eu/legal-content/EN/TXT/?toc=OJ%3AL%3A2019%3A158%3ATOC&amp;amp;uri=uriserv%3AOJ.L_.2019.158.01.0054.01.ENG#d1e741-54-1"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;Regulation on the internal market for electricity (EU) 2019/943.&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;</description>
+      <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+      <name>Market Operator</name>
+      <type>Harmonised Role</type>
+    </Actor>
+    <name>Actor Library</name>
+  </ActorLibrary>
+  <AreaLibrary>
+    <Area>
+      <description />
+      <mRID>6a5333af-ff2d-4d44-a489-e0f6f6c144fb</mRID>
+      <name>Energy market</name>
+    </Area>
+  </AreaLibrary>
+  <BusinessCaseLibrary>
+    <BusinessCase>
+      <Area>
+        <mRID>6a5333af-ff2d-4d44-a489-e0f6f6c144fb</mRID>
+      </Area>
+      <description />
+      <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      <name>Operational planning activities</name>
+    </BusinessCase>
+    <BusinessCase>
+      <Area>
+        <mRID>6a5333af-ff2d-4d44-a489-e0f6f6c144fb</mRID>
+      </Area>
+      <description />
+      <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      <name>Provide energy flexibility services</name>
+    </BusinessCase>
+  </BusinessCaseLibrary>
+  <BusinessObjectLibrary>
+    <BusinessObject>
+      <description>To confirm that activation has been executed.</description>
+      <identifier>Info1</identifier>
+      <mRID>46d6ff86-bf6a-4027-9ea4-12d3a420399c</mRID>
+      <name>Activation acknowledgement</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>DSO informs TSO about successful activation of the flexibility service in the distribution grid.</description>
+      <identifier>Info2</identifier>
+      <mRID>7063e125-31d7-42b2-a270-7a0731b1db20</mRID>
+      <name>Activation status</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>This a request for activation of the contracted flexibility resource.</description>
+      <identifier>Info3</identifier>
+      <mRID>3c1cb605-f58c-4958-814a-7a03a043659d</mRID>
+      <name>Activation signal</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Measured active power delivered by the flexibility resource. This is time series, delivered in real-time.</description>
+      <identifier>Info4</identifier>
+      <mRID>f0340b68-b92a-4663-bed7-764f15a472d4</mRID>
+      <name>Real-time measurement</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Request to prequalified FSP to place a bid for the flexibility service.</description>
+      <identifier>Info5</identifier>
+      <mRID>313976a7-d5aa-44fa-bc96-e2944b3cad70</mRID>
+      <name>Call for bids</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Based on load forecast and simulation, DSO predicts the state of the distribution grid. Time intervals and volume of flexibility are determined. DSO sends a request to market operator to open a call for bids.&lt;br/&gt;This request contains information about the needed flexibility service, location/area, volume, date and time interval.</description>
+      <identifier>Info6</identifier>
+      <mRID>028c0c08-cef3-4d6a-9c4e-56111695b1c9</mRID>
+      <name>Flexibility need</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description />
+      <identifier>Info7</identifier>
+      <mRID>088c5de4-0f86-41f0-b2d1-05095d90ce2a</mRID>
+      <name>Flexibillity service bid</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description />
+      <identifier>Info8</identifier>
+      <mRID>d62c7c1d-7a9f-4088-b6f8-4e154f5789ac</mRID>
+      <name>Selected bids</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Request for grid prequalification sent by FSP or flexibility resource owner. The requst contains all technical data such as:&lt;br/&gt;1. Flexibility resource type&lt;br/&gt;2. Connectivity (voltage level, transformer substation, DSO)&lt;br/&gt;3. Location (GPS coordinates)&lt;br/&gt;4. Active power&lt;br/&gt;5. ....&lt;br/&gt;&lt;br/&gt;Based on these data, flexibility resource will be registered in the flexibility register.  Otherwise, grid prequalification test can be required from DSO.&lt;br/&gt;</description>
+      <identifier>Info9</identifier>
+      <mRID>5edc0deb-8121-43c5-988b-84b9e5973427</mRID>
+      <name>Grid prequalification request</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>This is information to FSP  about the grid prequalification and it is in the form of a document.</description>
+      <identifier>Info10</identifier>
+      <mRID>b731b7fb-003c-45f7-b5c3-063b225b8de8</mRID>
+      <name>Grid prequalification report</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>This is information that DSO sends to market operator after running the grid prequalification tests. It concludes does or not flexibility resources can be registered, and used later without negative impact on the distribution grid.</description>
+      <identifier>Info11</identifier>
+      <mRID>4277ff30-2470-406e-a9a2-de42dd9d1945</mRID>
+      <name>Grid prequalification test results</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Information about accepted offers.</description>
+      <identifier>Info12</identifier>
+      <mRID>07c2e8e9-6aa8-4ca3-8762-9fe88b6093d6</mRID>
+      <name>Offer acceptance</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Offer for the flexibility service on OTC market.&lt;br/&gt;</description>
+      <identifier>Info13</identifier>
+      <mRID>bc4565f0-22d9-45b3-9c7c-85e47748934d</mRID>
+      <name>Flexibiltity offer</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description />
+      <identifier>Info14</identifier>
+      <mRID>1b402b9e-1938-45b1-abee-cc9aa8f14ac4</mRID>
+      <name>Request for flexibility offer</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Request document with all the information necessary to run prequalifcation tests. These documents include:&lt;br/&gt;1. Type of the DER&lt;br/&gt;2. Connection information (DSO, nominal voltage, transformer substation ID, GPS location)&lt;br/&gt;3. Installed power&lt;br/&gt;4.</description>
+      <identifier>Info15</identifier>
+      <mRID>20ac9df8-68c1-4677-a482-6b26d64d6bf1</mRID>
+      <name>Prequalification request</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Document with the prequalification results.</description>
+      <identifier>Info16</identifier>
+      <mRID>ce6e318f-ed47-4c5c-a23d-1d3b29c5e8a9</mRID>
+      <name>Prequalification information</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Request for product prequalification with accompanying documents.</description>
+      <identifier>Info17</identifier>
+      <mRID>a7048736-1d7f-4449-8377-84e8c1aa7a90</mRID>
+      <name>Product prequalification request</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Results of tests run by DSO.</description>
+      <identifier>Info18</identifier>
+      <mRID>22165eb0-609b-43f2-a779-3e5f48482df5</mRID>
+      <name>Product prequalification test results</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Detailed description of the flexibility service product and requirements. This is a document.</description>
+      <identifier>Info19</identifier>
+      <mRID>77bc39f1-f954-46a4-8d98-a4b7fcc8574c</mRID>
+      <name>Product prequalification requirements</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description />
+      <identifier>Info20</identifier>
+      <mRID>33901346-ea40-4ecf-adf9-2dbcff2e0f2a</mRID>
+      <name>Product prequalification report</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>FSP agrees with the calculated volume related to the delivered flexibility service.</description>
+      <identifier>Info21</identifier>
+      <mRID>1b71eaac-d551-4bfb-a37b-af4ef745d0ed</mRID>
+      <name>Volume acknowledged</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Document, not modeled in CIM.</description>
+      <identifier>Info22</identifier>
+      <mRID>917cf83c-b984-48bd-a15a-2b4a166866f9</mRID>
+      <name>Bill</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>This information is related to the sending the invoice and payment. It will not be modeled with CIM.</description>
+      <identifier>Info23</identifier>
+      <mRID>c0e04fd3-1b40-4402-aabc-5af70502ff1b</mRID>
+      <name>Reimbursement</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>Information about calculated delivered volume, from the baseline and measurements.</description>
+      <identifier>Info24</identifier>
+      <mRID>774c99c4-973f-40b5-a044-5a2d4043644d</mRID>
+      <name>Flexibility service volume</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>FSP determinates the deviation in the calculated volume and requests a check of the calculation.</description>
+      <identifier>Info25</identifier>
+      <mRID>4d0dcf4b-eb99-4197-9a78-3a4cf10ffe1a</mRID>
+      <name>Recalculation request</name>
+    </BusinessObject>
+    <BusinessObject>
+      <description>After delivered flexibility service, volume is determined based on measurements. This volume is a basis for reimbursement.&lt;br/&gt;</description>
+      <identifier>Info26</identifier>
+      <mRID>eee9a5ec-87db-4b90-af68-174a99f9bbc8</mRID>
+      <name>Volume validation request</name>
+    </BusinessObject>
+  </BusinessObjectLibrary>
+  <CommonTermLibrary />
+  <name>Use Case Repository</name>
+  <RequirementLibrary />
+  <UseCaseLibrary>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>849dbc1f-3dd1-490c-9142-2de3c5595e1d</mRID>
+      <name>Prequalification</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>52052567-2a63-4a07-ac5f-4f373f93f743</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>52052567-2a63-4a07-ac5f-4f373f93f743</mRID>
+      <name>Offering</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>849dbc1f-3dd1-490c-9142-2de3c5595e1d</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>f3f672bc-e797-4993-8a04-f4ccac11c676</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>f3f672bc-e797-4993-8a04-f4ccac11c676</mRID>
+      <name>Activation-OTC</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>52052567-2a63-4a07-ac5f-4f373f93f743</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>0877ad60-6993-44df-b36b-abb447ecc4ef</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>0877ad60-6993-44df-b36b-abb447ecc4ef</mRID>
+      <name>Settlement-OTC</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>f3f672bc-e797-4993-8a04-f4ccac11c676</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>313a3295-19b4-4deb-9b60-e60b92927ba5</mRID>
+      <name>Grid prequalification</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>3439f0c8-80f2-4896-bd40-be4556c85a91</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>3439f0c8-80f2-4896-bd40-be4556c85a91</mRID>
+      <name>Product prequalification</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>313a3295-19b4-4deb-9b60-e60b92927ba5</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>ea73fd14-13f8-4eb6-864f-d68a35fac84f</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>ea73fd14-13f8-4eb6-864f-d68a35fac84f</mRID>
+      <name>Bidding</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>3439f0c8-80f2-4896-bd40-be4556c85a91</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>25406cc5-5e1f-44a4-b976-b00268a38156</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>25406cc5-5e1f-44a4-b976-b00268a38156</mRID>
+      <name>Activation - Flexibility market</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>ea73fd14-13f8-4eb6-864f-d68a35fac84f</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>b82d8c40-9322-4bc9-bbea-ed6a2e492fbd</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>b82d8c40-9322-4bc9-bbea-ed6a2e492fbd</mRID>
+      <name>Settlement-Flexibilty market</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>25406cc5-5e1f-44a4-b976-b00268a38156</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+    <UseCase>
+      <ActorGrouping>
+        <description />
+        <FurtherActorInformation>
+          <Actor>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </Actor>
+          <Actor>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </Actor>
+          <Actor>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </Actor>
+          <Actor>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </Actor>
+          <description />
+        </FurtherActorInformation>
+        <name />
+      </ActorGrouping>
+      <Assumption>
+        <description />
+        <mRID>59f9bb03-1efd-4ba5-bbf0-967aa3b6db00</mRID>
+        <name>Local flexibility market</name>
+        <number>1</number>
+      </Assumption>
+      <Assumption>
+        <description />
+        <mRID>ae860117-d2c1-4ad2-918b-609dd6d173bd</mRID>
+        <name>DSO procures congestion management services at the local flexibility market.</name>
+        <number>2</number>
+      </Assumption>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <classification>National relation</classification>
+      <Drawing>
+        <drawingType>use case overview</drawingType>
+        <mRID>c8b2133c-0382-436c-9426-3a41ad9d4ea7</mRID>
+        <name>BusinessUseCase1 - overview</name>
+        <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image10.png</URI>
+      </Drawing>
+      <Drawing>
+        <drawingType>scenarios flowchart</drawingType>
+        <mRID>1ded7e71-c610-407b-b47e-44d48cb78a40</mRID>
+        <name>BusinessUseCase1 - scenarios flowchart</name>
+        <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image11.png</URI>
+      </Drawing>
+      <identifier />
+      <KeyPerformanceIndicator>
+        <description />
+        <identifier>1</identifier>
+        <mRID>203593dc-424f-489c-9c0f-55c231be6587</mRID>
+        <name>A number of succefullz avoided congestions during demonstration period</name>
+        <Objective>
+          <mRID>cfdd65f6-46d4-45b2-8196-af55163fb078</mRID>
+        </Objective>
+        <Objective>
+          <mRID>2e949073-a8b8-44e9-bfff-887322236bd9</mRID>
+        </Objective>
+      </KeyPerformanceIndicator>
+      <KeyPerformanceIndicator>
+        <description />
+        <identifier>2</identifier>
+        <mRID>040a9fc2-cbc7-43dc-bb78-300361e275af</mRID>
+        <name>Volume of activated flexibilty services</name>
+        <Objective>
+          <mRID>7c069957-d691-470f-bcf0-2bca19118533</mRID>
+        </Objective>
+      </KeyPerformanceIndicator>
+      <KeyPerformanceIndicator>
+        <description />
+        <identifier>3</identifier>
+        <mRID>58a2dc97-f825-49f2-b5e7-ce90ab3155a1</mRID>
+        <name>Success of local flexibility market platform test</name>
+        <Objective>
+          <mRID>7c069957-d691-470f-bcf0-2bca19118533</mRID>
+        </Objective>
+        <Objective>
+          <mRID>de417982-008d-447e-8c7b-f9cf0ef5679e</mRID>
+        </Objective>
+      </KeyPerformanceIndicator>
+      <keywords>Flexibilty, Local flexibilty market, Congestion management</keywords>
+      <levelOfDepth>High level</levelOfDepth>
+      <mRID>55b841c9-7edc-4847-8a75-ee529cee82de</mRID>
+      <name>Congestion management in distribution grids under market conditions</name>
+      <Narrative>
+        <completeDescription>In this BUC, DSO uses flexibility resources connected to the distribution grid to resolve congestion problem and postpone investment in the grid reinforcement. Depending on how local flexibility market is organised, two scenarios are considered.&lt;br/&gt;The first scenario corresponds to &lt;b&gt;over the counter market (OCM)&lt;/b&gt; in which flexibility service provider (FSP) make a long-term (e.g. 6 months) bilateral contract with DSO related. This first scenario includes the following processes:&lt;br/&gt;&amp;#183; &lt;b&gt;Prequalification&lt;/b&gt;: after DSO publishes a call for flexibility procurement, FSP sends a request for prequalification. Within this process, DSO evaluates technical info and optionally run tests (depending on the offered power and impact on the distribution grid) to confirm capability of FSP to deliver a service.&lt;br/&gt;&amp;#183; &lt;b&gt;Offering&lt;/b&gt;: when DSO identifies a need for the flexibility, DSO sends requests for offers. FSP send an offer. DSO collects and ranks the offer. After selection of the best offer, contract is signed.&lt;br/&gt;&amp;#183; &lt;b&gt;Activation&lt;/b&gt;: when congestion in the grid is predicted or occurred, DSO sends a request to FSP for contracted flexibility at a given location in the distribution grid. FSP acknowledges request and activates a service (e.g. reduces a consumption by switching off heat pumps).&lt;br/&gt;&amp;#183; &lt;b&gt;Settlement&lt;/b&gt;: using calculated base line, volume of the delivered power is calculated. This is volume is confirmed by both sides (e.g. check of error in measurements) and invoice is sent.&lt;br/&gt;In the second scenario, DSO procures flexibility on the &lt;b&gt;organised local flexibility market&lt;/b&gt;. This scenario includes the following processes:&lt;br/&gt;&amp;#183; &lt;b&gt;Grid prequalification:&lt;/b&gt; at the start of this process, flexibility resources are registered at the flexibility register. Flexibility register (component located at the market operator) initiates prequalification of the registered resource run by DSO, to validate existence of the resource and it&amp;#8217;s impact on the distribution grid. The complexity of this procedure depends on the volume/power and the impact on the grid of the flexibility resources.&lt;br/&gt;&amp;#183; &lt;b&gt;Product prequalification&lt;/b&gt;: DSO defines the requirements that each local flexibility product should meet. Flexibility market operator (FMO) coordinates the prequalification process. Flexibility service provider sends the prequalification request with accompanying information to the FMO, who forwards this request to DSO. DSO runs predefined tests and calculation, after send the results and acknowledge FMO about the final decision. FMO stores this information to the flexibility register and acknowledges FSP &lt;br/&gt;&amp;#183; &lt;b&gt;Bidding&lt;/b&gt;: DSO expresses the need for the flexibility service to FMO (based on the load and distributed generation prediction and state of the distribution grid), which publishes request for bids. FMO collects the bids from flexibility service provides and selects the optimal bids. FMO sends information about selected bids to DSO, flexibility service provider, TSO and flexibility register.&lt;br/&gt;&amp;#183; &lt;b&gt;Activation&lt;/b&gt;: For the selected bid, activation is initiated by DSO sending activation signal to the flexibility service provider. FSP internally activates flexibility resources and acknowledges DSO. DSO informs TSO about activated flexibility resources in the distribution grid in order to avoid collision and double activation on the balancing market. During the activation, flexibility register (component of the market operator) collects the measurements from DSO and FSP.&lt;br/&gt;&lt;b&gt;Settlement&lt;/b&gt;: Flexibility register calculates the base line. After the activated product has been delivered, flexibility register calculates delivered volume and information to DSO and FSP. In the process of volume validation, DSO and FSP should validate delivered volume. When volume can&amp;#8217;t be validated, alignment process is initiated. FMO monetizes the delivered flexibility product and send the bill to DSO and reimbursement to FSP.</completeDescription>
+        <mRID>3df96a7c-243b-4b22-aab9-ada17ff03947</mRID>
+        <shortDescription>Due to excessive and increasing energy consumption, existing MV/LV secondary substations occasionally becomes thermally overloaded and power lines congested. Demand response services can be utilised to decrease duration or even prevent overloads of the distribution grid components. In particular, switching of the heat pumps in one substation area can be used to reduce the transformer load during peak hours. In regard how DSO procure this flexibility service, two scenarios are considered. In the first scenario, service provider (e.g. aggregator) enters into a contract with DSO for a long-term period. The second scenario assumes that local flexibility market exists and that DSO purchases flexibility service at the local flexibility market to resolve congestion problems in the distribution grid.</shortDescription>
+      </Narrative>
+      <nature>BUC</nature>
+      <Prerequisite>
+        <description />
+        <mRID>8b6d8c15-02e1-41af-b28a-ba34210efa49</mRID>
+        <name>Flexibility service provider provides flexibilty services to DSO to avoid grid congestion problems</name>
+        <number>1</number>
+      </Prerequisite>
+      <Prerequisite>
+        <description />
+        <mRID>64e9b96f-19da-4550-83b1-494f8c199929</mRID>
+        <name>Flexibility service provider controls sufficient volume of flexibility resources in the DSO grid.</name>
+        <number>2</number>
+      </Prerequisite>
+      <prioritization />
+      <RelatedObjective>
+        <description />
+        <mRID>cfdd65f6-46d4-45b2-8196-af55163fb078</mRID>
+        <name>Deferral of grid reinforcement investments (defer or avoid secondary substation replacement)</name>
+      </RelatedObjective>
+      <RelatedObjective>
+        <description />
+        <mRID>2e949073-a8b8-44e9-bfff-887322236bd9</mRID>
+        <name>Improve security of supply</name>
+      </RelatedObjective>
+      <RelatedObjective>
+        <description />
+        <mRID>7c069957-d691-470f-bcf0-2bca19118533</mRID>
+        <name>Validate demand response mechanism to prevent congestion in the distribution grid.</name>
+      </RelatedObjective>
+      <RelatedObjective>
+        <description />
+        <mRID>de417982-008d-447e-8c7b-f9cf0ef5679e</mRID>
+        <name>Test flexibility products to prevent congestion in the distribution grid under market conditions.</name>
+      </RelatedObjective>
+      <RelatedUseCase>
+        <mRID>849dbc1f-3dd1-490c-9142-2de3c5595e1d</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>52052567-2a63-4a07-ac5f-4f373f93f743</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>f3f672bc-e797-4993-8a04-f4ccac11c676</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>0877ad60-6993-44df-b36b-abb447ecc4ef</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>313a3295-19b4-4deb-9b60-e60b92927ba5</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>3439f0c8-80f2-4896-bd40-be4556c85a91</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>ea73fd14-13f8-4eb6-864f-d68a35fac84f</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>25406cc5-5e1f-44a4-b976-b00268a38156</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>b82d8c40-9322-4bc9-bbea-ed6a2e492fbd</mRID>
+      </RelatedUseCase>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>a03db310-2990-4af4-baf1-65584ab78b26</mRID>
+          <name>Activate flexibility resource</name>
+          <number>1.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>eedd1a91-d40b-408b-8b7c-425f1016f34a</mRID>
+          <name>Receive acknowledgement</name>
+          <number>1.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>86c41922-cb53-45bb-af83-c71d69075dc6</mRID>
+          <name>Receive activation info</name>
+          <number>1.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>e2fa0b2c-7fc8-43e5-9649-b85b9b3aeb42</mRID>
+          <name>Receive activation measurement</name>
+          <number>1.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>fad8a711-d90a-4fa8-bfa6-bf050f50b3f3</mRID>
+          <name>Receive measurements</name>
+          <number>1.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>46d6ff86-bf6a-4027-9ea4-12d3a420399c</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>3ef44d71-0b71-4fb2-9c73-6abf24ba6018</mRID>
+          <name>Send acknowledgement</name>
+          <number>1.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>7063e125-31d7-42b2-a270-7a0731b1db20</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>5900fd3c-33d5-43cc-b6c6-c1c54b00ddfe</mRID>
+          <name>Send activation info</name>
+          <number>1.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>3c1cb605-f58c-4958-814a-7a03a043659d</mRID>
+          </BusinessObject>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>7f98826c-6bd3-4462-a91b-80d933ff2438</mRID>
+          <name>Send activation signal</name>
+          <number>1.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>f0340b68-b92a-4663-bed7-764f15a472d4</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>6d0a1792-6c69-4b2e-b7dc-5c513f675329</mRID>
+          <name>Send real-time measurements</name>
+          <number>1.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>f0340b68-b92a-4663-bed7-764f15a472d4</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>f5af74f5-c3a4-43e0-a2fd-38aa03604496</mRID>
+          <name>Send real-time measurements</name>
+          <number>1.10</number>
+          <service />
+        </Activity>
+        <description>Activation of flexibilty service procured on the flexibility market.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>064b3a01-a6d3-43b7-86ef-66f80bab027d</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image1.png</URI>
+        </Drawing>
+        <mRID>5c92c7de-8799-490d-87f0-bcc8c0e6b849</mRID>
+        <name>Activation</name>
+        <number>1</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>1607eb25-66a1-40a1-ba88-5095175d617f</mRID>
+          <name>Activate flexibillity resources</name>
+          <number>2.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>5755d909-e73b-42b5-adec-19707f86fcd2</mRID>
+          <name>Receive activation acknowledgment</name>
+          <number>2.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>b117a49d-2360-460f-aaa7-90eb7d723d59</mRID>
+          <name>Receive activation request</name>
+          <number>2.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description>Information about flexibility resource activation</description>
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>4f55b374-6f8c-4efb-acd4-092094202447</mRID>
+          <name>Receive activation status</name>
+          <number>2.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>5c2efc4d-8345-4daf-b311-95b4736084f1</mRID>
+          <name>Receive measurements</name>
+          <number>2.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>46d6ff86-bf6a-4027-9ea4-12d3a420399c</mRID>
+          </BusinessObject>
+          <description>ACK is sent to confirm reception of a document.&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>8486d91a-27b2-41c9-a4e2-0159bd5cb839</mRID>
+          <name>Send acknowledgement</name>
+          <number>2.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>3c1cb605-f58c-4958-814a-7a03a043659d</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>62551018-e02b-46e1-a98e-eadb7c6d0aff</mRID>
+          <name>Send activation request for contracted flexibility</name>
+          <number>2.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>7063e125-31d7-42b2-a270-7a0731b1db20</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>1c8a4dfd-bbea-4203-9066-407e578276e2</mRID>
+          <name>Send activation status</name>
+          <number>2.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description>Information when flexibilty service ended.</description>
+          <event />
+          <mRID>4d75f9a0-0c58-409f-a374-6db0838cacad</mRID>
+          <name>Send activation status</name>
+          <number>2.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>f0340b68-b92a-4663-bed7-764f15a472d4</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>bc7e92ee-a99a-4582-ba61-dcd190eca22e</mRID>
+          <name>Send measurements</name>
+          <number>2.10</number>
+          <service />
+        </Activity>
+        <description>DSO activates flexibility product to avoid congestion in the grid.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>7bc15b43-81ba-48a9-a6b6-dcba767825ee</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image2.png</URI>
+        </Drawing>
+        <mRID>c5fb9f2f-f41e-4236-8e1c-1f56e614238b</mRID>
+        <name>Activation-OTC</name>
+        <number>2</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <mRID>bfeb1e74-34fc-4744-a604-909042817b71</mRID>
+          <name>Activity1</name>
+          <number>3.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>aeb5e5fe-6af5-452f-979b-908bf49a79f6</mRID>
+          <name>Market clearing</name>
+          <number>3.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>313976a7-d5aa-44fa-bc96-e2944b3cad70</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>6b6b8f76-9431-484b-a4c7-447f45a535d0</mRID>
+          <name>Publish flexibilty need</name>
+          <number>3.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>9256a568-7ad4-442b-b0df-5dd267fc3047</mRID>
+          <name>Receive and acknowledge</name>
+          <number>3.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>c2dbc71f-edd2-4c41-bf25-54f2dd58d8fc</mRID>
+          <name>Receive and acknowledge</name>
+          <number>3.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>01295820-176f-4865-951f-2cd5e762fdd2</mRID>
+          <name>Receive and acknowledge</name>
+          <number>3.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>1028c957-77a9-4b8e-910e-cf5f76ce7988</mRID>
+          <name>Receive call for bid</name>
+          <number>3.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>f09d66d4-b453-48c3-b1f4-5623c80f63f7</mRID>
+          <name>Receive flexibilty service bid</name>
+          <number>3.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>028c0c08-cef3-4d6a-9c4e-56111695b1c9</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>18908747-8fc0-4c7a-bed7-545dbde1e052</mRID>
+          <name>Send flexibility need</name>
+          <number>3.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>088c5de4-0f86-41f0-b2d1-05095d90ce2a</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>bc9eec85-cd45-4e62-9c8c-7878b2948393</mRID>
+          <name>Send flexibility service bid</name>
+          <number>3.10</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>d62c7c1d-7a9f-4088-b6f8-4e154f5789ac</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>0038521c-1929-488a-b3bc-b7c1e497714c</mRID>
+          <name>Send trading results</name>
+          <number>3.11</number>
+          <service />
+        </Activity>
+        <description>Flexibilty Market Operator collects the bids from Flexibility Service Provider, for the flexibilty need published by DSO.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>13b3af9c-f4f4-4bf9-a0ad-868938c6e2fe</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image3.png</URI>
+        </Drawing>
+        <mRID>c70c38db-5d5b-454f-9a70-5607e1b216c4</mRID>
+        <name>Bidding</name>
+        <number>3</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <BusinessObject>
+            <mRID>5edc0deb-8121-43c5-988b-84b9e5973427</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>5dfc2a8d-c0a0-42a9-919d-b97115fa75f4</mRID>
+          <name>Initiate grid prequalification</name>
+          <number>4.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>dc2db064-8ba9-4750-bf39-18ed5f4ad90a</mRID>
+          <name>Receive grid prequalification report</name>
+          <number>4.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>f43b2718-9546-436a-ad66-eea48ee754da</mRID>
+          <name>Receive grid prequalification request</name>
+          <number>4.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>c3a1d682-1241-4847-9c4c-661ebbda1857</mRID>
+          <name>Register flexibility resource</name>
+          <number>4.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>5edc0deb-8121-43c5-988b-84b9e5973427</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>ffb5a980-8528-498c-8872-547c80381e19</mRID>
+          <name>Request to register flexibility resource</name>
+          <number>4.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>9016dfe3-cbee-475f-951f-5bf8178f428b</mRID>
+          <name>Run grid prequalification tests</name>
+          <number>4.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>b731b7fb-003c-45f7-b5c3-063b225b8de8</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>5044df19-b151-40f1-94de-8d99b71779df</mRID>
+          <name>Send grid prequalification report</name>
+          <number>4.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>4277ff30-2470-406e-a9a2-de42dd9d1945</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>371608bc-2bcd-43ad-8d51-1285ebeffcfb</mRID>
+          <name>Send grid prequalification result</name>
+          <number>4.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>83be7b2b-507b-4c35-8162-1eda21187251</mRID>
+          <name>Validate and register flexibilty resource</name>
+          <number>4.9</number>
+          <service />
+        </Activity>
+        <description>Run by DSO to validate existence of the flexibility resource and evaluate impact on the distribution grid.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>4adad88b-3814-4d79-8cd6-79091a5b7cdc</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image4.png</URI>
+        </Drawing>
+        <mRID>7f050162-f9cf-4611-9855-159c5345dee5</mRID>
+        <name>Grid prequalification</name>
+        <number>4</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>558e196c-f9a0-410f-a7e0-a6b17110ac1a</mRID>
+          <name>Call for offers closed</name>
+          <number>5.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>02412277-84f1-4b42-aefd-23a928d6c377</mRID>
+          <name>Flexibilty service offer reception</name>
+          <number>5.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>9b397113-ed09-41c4-846b-ade0a4b695f0</mRID>
+          <name>Ranking and selection of offers</name>
+          <number>5.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>88a98790-a10d-4492-a815-f432f91e1ef9</mRID>
+          <name>Receive information about selected offers</name>
+          <number>5.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>aac0de44-5338-4dc9-8507-053f0d3ce622</mRID>
+          <name>Receive information about selected offers</name>
+          <number>5.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>5fcc6622-0cb3-407b-a8ef-48bc7e66ccfd</mRID>
+          <name>Receive the request for an offer</name>
+          <number>5.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>07c2e8e9-6aa8-4ca3-8762-9fe88b6093d6</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>5e83d932-2a56-4891-bf39-d439dc225018</mRID>
+          <name>Send acceptance offer confirmation</name>
+          <number>5.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>bc4565f0-22d9-45b3-9c7c-85e47748934d</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>18211044-066d-4fd8-ac9d-9f91b5374dcb</mRID>
+          <name>Send an offer for the flexibilty service</name>
+          <number>5.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>1b402b9e-1938-45b1-abee-cc9aa8f14ac4</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>de5bfc98-1237-4f69-98cb-3123725525f8</mRID>
+          <name>Send the need for the flexibilty</name>
+          <number>5.9</number>
+          <service />
+        </Activity>
+        <description>Flexibility service provider (FSP) makes a long-term (e.g. 6 months) contract with DSO. This corresponds to the OTC market.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>7dc6aea0-c20e-4346-a4d0-070b6f92b6e6</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image5.png</URI>
+        </Drawing>
+        <mRID>d130d971-fc45-41c6-8fc6-a3632ce0a456</mRID>
+        <name>Offering</name>
+        <number>5</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description>DSO expresses a need for a flexibilty services to prevent a congestion in the distribution grid and publishes a call to prequalificate products that meet DSO requirements.</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>9db03b1c-6082-4791-b52b-13c9d9ccbe27</mRID>
+          <name>Publish call for flexibility services</name>
+          <number>6.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>1437e9eb-5d11-4e65-9f92-66a766bf47e0</mRID>
+          <name>Receive prequalification decision and acknowledge</name>
+          <number>6.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>21ed2e4c-4347-4c39-adb1-2fd98da5256f</mRID>
+          <name>Receive prequalification information and acknowledge</name>
+          <number>6.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>e1e98d8f-9723-49a0-b73d-aa05f8bfab49</mRID>
+          <name>Receive request for prequalification</name>
+          <number>6.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>c01c3354-8ef9-441a-b607-aa592a5c1c3d</mRID>
+          <name>Run prequalification tests</name>
+          <number>6.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>20ac9df8-68c1-4677-a482-6b26d64d6bf1</mRID>
+          </BusinessObject>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>db4545cb-e5a1-411a-ba4d-a4bff8f40714</mRID>
+          <name>Send a request for the flexibilty service prequalification</name>
+          <number>6.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>ce6e318f-ed47-4c5c-a23d-1d3b29c5e8a9</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>b40381a7-6a3d-4409-a1ef-554600622e6d</mRID>
+          <name>Send prequalification test results and acknowledgement</name>
+          <number>6.7</number>
+          <service />
+        </Activity>
+        <description>On OTC market, prequalification run by DSO only.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>c7e56d21-0cd6-498d-9786-2de8a0b4c174</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image6.png</URI>
+        </Drawing>
+        <mRID>afd963ee-364d-44ca-b8de-79aec9b09aa0</mRID>
+        <name>Prequalification</name>
+        <number>6</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>b6e2fabd-2338-49ff-a3bf-cf9c87c5ffc6</mRID>
+          <name>Evaluate prequalification test results</name>
+          <number>7.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>6ffe2cc4-20d0-40de-a3a7-8a658d5f577f</mRID>
+          <name>Publish call for flexibility service</name>
+          <number>7.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>8cc903f2-c4ba-4230-acd6-cfa0675c4879</mRID>
+          <name>Receive and acknowledge</name>
+          <number>7.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>1b2df1af-916d-4546-a928-0ae0cf7e70be</mRID>
+          <name>Receive and acknowledge</name>
+          <number>7.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>121e72c3-e0bf-4f21-8bee-75ca5af7a72d</mRID>
+          </InformationProducer>
+          <mRID>61f0e074-9a61-44a2-aec8-8cd6ffa17480</mRID>
+          <name>Receive and acknowledge</name>
+          <number>7.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>a7048736-1d7f-4449-8377-84e8c1aa7a90</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>42780557-9b29-4b6b-8aa6-8cd94f2066e4</mRID>
+          <name>Receive and forward request for flexibilty service prequalification</name>
+          <number>7.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>27c3e69b-97b6-406e-be3c-5f2f1c876126</mRID>
+          <name>Receive and validate request</name>
+          <number>7.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>29cfacbf-1424-4ef3-bb31-638cae07ae9e</mRID>
+          <name>Receive prequalification test results</name>
+          <number>7.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>897bd4c8-07a8-4a00-ac1d-02a70e43473e</mRID>
+          <name>Run prequalification tests</name>
+          <number>7.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>22165eb0-609b-43f2-a779-3e5f48482df5</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>4725624a-c5bf-4eba-af34-b7fed64b53ab</mRID>
+          <name>Send prequalification test results</name>
+          <number>7.10</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>77bc39f1-f954-46a4-8d98-a4b7fcc8574c</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>70add8db-cc92-41c1-a59a-7caab753a3ef</mRID>
+          <name>Send product prequalification requirements</name>
+          <number>7.11</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>a7048736-1d7f-4449-8377-84e8c1aa7a90</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>c890e594-9aca-43e7-aab3-e52e6cd46352</mRID>
+          <name>Send request for flexibilty service prequalification</name>
+          <number>7.12</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>33901346-ea40-4ecf-adf9-2dbcff2e0f2a</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>8b31fe15-dab9-4152-97b1-1c8591c47660</mRID>
+          <name>Send service prequalification information</name>
+          <number>7.13</number>
+          <service />
+        </Activity>
+        <description>Process is coordinated by the Flexibilty Market Operator (FMO).</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>5e503551-83c9-43a5-9d8d-52858ad3f131</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image7.png</URI>
+        </Drawing>
+        <mRID>ede1e88c-64b0-4008-891f-1792980a8f85</mRID>
+        <name>Product prequalification</name>
+        <number>7</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>846e73c1-a3a1-4f62-b5bb-aa90d500c018</mRID>
+          <name>Calculate baseline</name>
+          <number>8.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>854ce171-fab7-458f-9ddd-099aafb47578</mRID>
+          <name>Monetiye flexibilty service</name>
+          <number>8.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>5c1a4a98-2aa8-47de-8b20-ea52167b6abf</mRID>
+          <name>Receive acknowledgement</name>
+          <number>8.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>f8ff0b75-3030-4fcb-977c-e2898e35f186</mRID>
+          <name>Receive proposed volume</name>
+          <number>8.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>df4a151e-81ff-48c5-935d-67288e7f8713</mRID>
+          <name>Receive proposed volume</name>
+          <number>8.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>b7d8376e-f40e-42b3-b602-babfb4c9273e</mRID>
+          <name>Receive the bill</name>
+          <number>8.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>df0d620b-828c-46ef-9210-59022e511ebe</mRID>
+          <name>Receive the reimbursement</name>
+          <number>8.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>1b71eaac-d551-4bfb-a37b-af4ef745d0ed</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>dbe6615b-8499-4f2b-917a-2e0b93748f1e</mRID>
+          <name>Send acknowledgement</name>
+          <number>8.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>1b71eaac-d551-4bfb-a37b-af4ef745d0ed</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>9582ae35-b5f2-47d9-a37e-a09a501a9698</mRID>
+          <name>Send acknowledgement</name>
+          <number>8.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>917cf83c-b984-48bd-a15a-2b4a166866f9</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>f349d048-ae5a-484b-a38d-2f46fdee596e</mRID>
+          <name>Send the bill</name>
+          <number>8.10</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>c0e04fd3-1b40-4402-aabc-5af70502ff1b</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>996d6f48-0760-4d25-b9c2-ea083a85a416</mRID>
+          <name>Send the reimbursement</name>
+          <number>8.11</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>462f93c8-fa80-4b36-8089-de4496044782</mRID>
+          <name>Start alignement process</name>
+          <number>8.12</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <mRID>38b26cc1-316e-444e-b632-3056d529a225</mRID>
+          <name>Start volume aligment process</name>
+          <number>8.13</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>774c99c4-973f-40b5-a044-5a2d4043644d</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>9c168352-71a9-47ae-b1af-23ca6ceb29a8</mRID>
+          </InformationProducer>
+          <mRID>51fb6a5f-0d7b-47fe-862c-8aff8bb01268</mRID>
+          <name>Validate delivered volume</name>
+          <number>8.14</number>
+          <service />
+        </Activity>
+        <description>Monetisation of the delivered flexibilty product, procured on the flexibilty market.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>b1ed3793-525a-41c5-b9ea-e5df4ca5ede2</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image8.png</URI>
+        </Drawing>
+        <mRID>2c82c968-8347-49f6-9403-c26f1640f4fb</mRID>
+        <name>Settlement</name>
+        <number>8</number>
+      </Scenario>
+      <Scenario>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>05a1b0a0-5138-4e51-ab9f-9efb59ca36b0</mRID>
+          <name>Calculate base line</name>
+          <number>9.1</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>876ff71a-823b-46f8-81d0-c9034cecec82</mRID>
+          <name>Calculate delivered volume</name>
+          <number>9.2</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>7440b5d7-078b-427e-9048-cf22e87f93eb</mRID>
+          <name>Receive acknowledgement</name>
+          <number>9.3</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>ef4097ff-7e13-4127-b027-1f80485e35fe</mRID>
+          <name>Receive proposed volume</name>
+          <number>9.4</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>ac1d72fc-0baa-4ae1-af95-4bb023053837</mRID>
+          <name>Receive the reimbursement</name>
+          <number>9.5</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>4d0dcf4b-eb99-4197-9a78-3a4cf10ffe1a</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <mRID>a0a9494a-2365-4cff-89e5-c370fce21497</mRID>
+          <name>Request volume recalculation</name>
+          <number>9.6</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>1b71eaac-d551-4bfb-a37b-af4ef745d0ed</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>43f73de2-a6ba-4e46-bd78-30ef0dc89bfe</mRID>
+          </InformationProducer>
+          <mRID>1fbc6045-1758-4404-a126-53bedabfa0e8</mRID>
+          <name>Send acknowledgement</name>
+          <number>9.7</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>eee9a5ec-87db-4b90-af68-174a99f9bbc8</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>fd8f2021-b7a8-407c-a313-f84d88cb9b13</mRID>
+          <name>Send request to validate volume</name>
+          <number>9.8</number>
+          <service />
+        </Activity>
+        <Activity>
+          <BusinessObject>
+            <mRID>c0e04fd3-1b40-4402-aabc-5af70502ff1b</mRID>
+          </BusinessObject>
+          <description>&lt;br/&gt;Modsarus Use Case::InstanceName=InfoInstance&lt;br/&gt;Modsarus Use Case::InstanceDescription=&lt;br/&gt;</description>
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>e5af8279-dccb-4838-8d8f-909e0932e79e</mRID>
+          <name>Send the reimbursement</name>
+          <number>9.9</number>
+          <service />
+        </Activity>
+        <Activity>
+          <description />
+          <event />
+          <InformationProducer>
+            <mRID>69dd2399-d76d-454e-a3f4-37196b34c973</mRID>
+          </InformationProducer>
+          <mRID>96cfcb63-8f0a-456f-b35d-713b1a375b72</mRID>
+          <name>Volume recalculation</name>
+          <number>9.10</number>
+          <service />
+        </Activity>
+        <description>Settlement for the delivered flexibilty service on the OTC market.</description>
+        <Drawing>
+          <drawingType>activities flowchart</drawingType>
+          <mRID>199a0893-569a-434c-aa34-a40f226373e1</mRID>
+          <name>Scenario1 - activities flowchart</name>
+          <URI type="UMLDiagram">Congestion management in distribution grids under market conditions\Image9.png</URI>
+        </Drawing>
+        <mRID>9e2d364a-69e8-44a8-aa32-f2d2b8f35277</mRID>
+        <name>Settlement-OTC</name>
+        <number>9</number>
+      </Scenario>
+      <scope>Demonstrate effectiveness and appropriateness of flexibility services for the congestion management of a distribution grid, under market conditions. The flexibility tested with this BUC can also be utilised for mFRR at the balancing market. This BUC will validate a process in which managing flexibility in the distribution grid (e.g. switching of heat pumps) can prevent that distribution grid overreaches it&amp;#8217;s physical limits (e.g. transformer overheating, line congestion). It will also verify information exchange between all stakeholders in this process enabling data as well as communication interoperability, under flexibility market conditions.</scope>
+      <Version>
+        <approvalStatus />
+        <Author>
+          <mRID>1e4a9556-3083-42ad-9080-d55c5adf75f9</mRID>
+          <name>Rok Lacko (GEN-I)</name>
+        </Author>
+        <changes>draft-concept</changes>
+        <date>2021-02-17T00:00:00</date>
+        <mRID>7f974b10-6cec-499e-9e69-d229d6d15019</mRID>
+        <number>1</number>
+      </Version>
+      <Version>
+        <approvalStatus />
+        <Author>
+          <mRID>46b75bcf-ea19-4dd3-b6c0-c1f7b1be1ef9</mRID>
+          <name>Nermin Suljanović (EIMV)</name>
+        </Author>
+        <changes>Domain, Roles, BUC description, SUC list without detailed description</changes>
+        <date>2021-04-28T00:00:00</date>
+        <mRID>9ecfed2d-2f12-4a9f-82f8-44503d97de34</mRID>
+        <number>2</number>
+      </Version>
+    </UseCase>
+    <UseCase>
+      <BusinessCase>
+        <mRID>0fd311ed-cb0e-4006-9a73-5cc3366e04e5</mRID>
+      </BusinessCase>
+      <BusinessCase>
+        <mRID>33074a83-1333-4fe2-be5a-575362ed1423</mRID>
+      </BusinessCase>
+      <identifier />
+      <mRID>53345991-df16-4471-9360-0ceba731832d</mRID>
+      <name>Information exchange</name>
+      <Narrative>
+        <shortDescription />
+      </Narrative>
+      <nature>SUC</nature>
+      <RelatedUseCase>
+        <mRID>0877ad60-6993-44df-b36b-abb447ecc4ef</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>b82d8c40-9322-4bc9-bbea-ed6a2e492fbd</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>25406cc5-5e1f-44a4-b976-b00268a38156</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>ea73fd14-13f8-4eb6-864f-d68a35fac84f</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>3439f0c8-80f2-4896-bd40-be4556c85a91</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>313a3295-19b4-4deb-9b60-e60b92927ba5</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>f3f672bc-e797-4993-8a04-f4ccac11c676</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>52052567-2a63-4a07-ac5f-4f373f93f743</mRID>
+      </RelatedUseCase>
+      <RelatedUseCase>
+        <mRID>849dbc1f-3dd1-490c-9142-2de3c5595e1d</mRID>
+      </RelatedUseCase>
+    </UseCase>
+  </UseCaseLibrary>
+</UC:UseCaseRepository>
